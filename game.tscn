@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://dsqm68wyrv1vg"]
+
+[ext_resource type="Script" uid="uid://yqo1bhb0ptc2" path="res://game.gd" id="1_feb5d"]
+
+[sub_resource type="Gradient" id="Gradient_mwb40"]
+offsets = PackedFloat32Array(0, 0.560241, 0.6385542, 0.70481926, 0.78313255, 0.85542166, 0.93373495, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 0, 0, 1, 1, 0.5411765, 0, 1, 1, 0.9529412, 0, 1, 0.30980393, 0.73333335, 0, 1, 0.23137255, 0.69803923, 1, 1, 0.39607844, 0.5254902, 0.78431374, 1, 0.7882353, 0.22745098, 0.9843137, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_80nbo"]
+gradient = SubResource("Gradient_mwb40")
+width = 1280
+height = 640
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_feb5d"]
+offsets = PackedFloat32Array(0.560241)
+colors = PackedColorArray(0, 0, 0, 0.47843137)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fc0e3"]
+gradient = SubResource("Gradient_feb5d")
+width = 1280
+height = 640
+
+[sub_resource type="Gradient" id="Gradient_e2o6t"]
+offsets = PackedFloat32Array(0.006024096, 0.82530123)
+colors = PackedColorArray(0.8901961, 0, 0, 1, 0.32046303, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_feb5d"]
+gradient = SubResource("Gradient_e2o6t")
+width = 28
+height = 28
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_80nbo"]
+offsets = PackedFloat32Array(0.28915662, 1)
+colors = PackedColorArray(0.69411767, 0.72156864, 0.24313726, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e2o6t"]
+gradient = SubResource("Gradient_80nbo")
+width = 28
+height = 28
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="game" type="Node2D" unique_id=1157348574]
+script = ExtResource("1_feb5d")
+grid_size = Vector2i(20, 10)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=74751081]
+
+[node name="background" type="Sprite2D" parent="." unique_id=1949100125]
+texture = SubResource("GradientTexture2D_80nbo")
+
+[node name="background2" type="Sprite2D" parent="." unique_id=631595640]
+texture = SubResource("GradientTexture2D_fc0e3")
+
+[node name="blocks" type="Node2D" parent="." unique_id=1583139553]
+
+[node name="rat" type="Node2D" parent="." unique_id=280574510]
+
+[node name="Sprite2D" type="Sprite2D" parent="rat" unique_id=700061705]
+position = Vector2(8, 8)
+texture = SubResource("GradientTexture2D_feb5d")
+
+[node name="snake" type="Node2D" parent="." unique_id=2070545375]
+
+[node name="head" type="Node2D" parent="snake" unique_id=740698912]
+
+[node name="Sprite2D" type="Sprite2D" parent="snake/head" unique_id=2125593990]
+position = Vector2(8, 8)
+texture = SubResource("GradientTexture2D_e2o6t")
+
+[node name="Timer" type="Timer" parent="." unique_id=428306354]
+process_callback = 0
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

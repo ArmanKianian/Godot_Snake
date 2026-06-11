@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c0dybxapoolpd"]
+
+[sub_resource type="Gradient" id="Gradient_oyyeb"]
+offsets = PackedFloat32Array(0.5301205, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.42352942, 0.94509804, 0.28235295, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e204m"]
+gradient = SubResource("Gradient_oyyeb")
+width = 28
+height = 28
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="tail" type="Node2D" unique_id=654511527]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=650383246]
+position = Vector2(8, 8)
+texture = SubResource("GradientTexture2D_e204m")
