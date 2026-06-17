@@ -1,6 +1,6 @@
 ![Snake](https://github.com/ArmanKianian/Godot_Snake/blob/main/Snake.png)
 # Godot_Snake
- A Classic Snake clone made with Godot 4.
+ A Classic Snake clone made with Godot 4.6.
 
 ## Implemented
 - Snake Head & Tail Movements
